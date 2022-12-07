@@ -22,7 +22,5 @@ import colors from "colors";
 console.clear();
 
 crearArchivo(argv.b, argv.m, argv.h, argv.l)
-    .then((nombreArchivo: string) =>
-        console.log(colors.yellow(nombreArchivo), "creado")
-    )
+    .then((nombreArchivo: string) => console.log(colors.yellow(nombreArchivo), "creado"))
     .catch((err: Error) => console.log(err));

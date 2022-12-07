@@ -2,16 +2,10 @@ import fs from "fs"; /* fs---> importamos file system */
 import colors from "colors";
 
 // Con async
-const crearArchivo = async (
-    base: number,
-    maximaBase: number,
-    hasta: number,
-    listar: boolean
-): Promise<string> => {
-    const nombreFichero =
-        maximaBase <= base
-            ? `./salida/tabla base ${base} hasta el ${hasta}.txt`
-            : `./salida/tabla base ${base} a base ${maximaBase} hasta el ${hasta}.txt`;
+const crearArchivo = async (base: number, maximaBase: number, hasta: number, listar: boolean): Promise<string> => {
+    const nombreFichero = maximaBase <= base
+        ? `./salida/tabla base ${base} hasta el ${hasta}.txt`
+        : `./salida/tabla base ${base} a base ${maximaBase} hasta el ${hasta}.txt`;
 
     let salida = "";
     let file = "";
@@ -19,10 +13,7 @@ const crearArchivo = async (
     do {
         for (let i = 1; i <= hasta; i++) {
             file += `${base} x ${i} = ${base * i}\n`;
-
-            salida += `${base} ${colors.yellow("x")} ${i} ${colors.yellow(
-                "="
-            )} ${base * i}\n`;
+            salida += `${base} ${colors.yellow("x")} ${i} ${colors.yellow("=")} ${base * i}\n`;
         }
         base++;
     } while (base <= maximaBase);
