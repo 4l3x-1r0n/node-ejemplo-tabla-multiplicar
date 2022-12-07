@@ -1,6 +1,7 @@
-const { crearArchivo } = require("./helpers/multiplicar");
-const argv = require("./config/yargs");
 import colors from "colors";
+
+import { crearArchivo } from "./helpers/multiplicar";
+import { argv } from "./config/yargs";
 
 // console.log(argv);
 
@@ -22,5 +23,7 @@ import colors from "colors";
 console.clear();
 
 crearArchivo(argv.b, argv.m, argv.h, argv.l)
-    .then((nombreArchivo: string) => console.log(colors.yellow(nombreArchivo), "creado"))
+    .then((nombreArchivo: string) =>
+        console.log(colors.yellow(nombreArchivo), "creado")
+    )
     .catch((err: Error) => console.log(err));
