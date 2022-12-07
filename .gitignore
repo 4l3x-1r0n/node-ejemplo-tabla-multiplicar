@@ -1,0 +1,14 @@
+
+
+
+
+node_modules/
+
+
+
+
+dist/*.js
+dist/*.map
+dist/config
+dist/helpers
+dist/salida/*.txt
